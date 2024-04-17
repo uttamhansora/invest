@@ -7,7 +7,7 @@ use App\Models\Qrcode;
 
 class AdminLoginController extends Controller
 {
-    // Test Code Psuh New Code
+    // Test Code Psuh New Code 11
     public function login(){
         try {
              return view('admin.login');
