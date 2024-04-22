@@ -155,9 +155,9 @@
         <div class="box mb-4">
         <select class="form-control" name="country" value="{{old('country')}}" id="countryDropdown" required>
             <option value="" selected>Select Country</option>
-            {{-- @foreach($country as $v)
+            @foreach($country as $v)
             <option value="{{$v->id}}">{{$v->name}}</option>
-            @endforeach --}}
+            @endforeach
 
         </select>
         </div>
