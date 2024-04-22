@@ -575,7 +575,7 @@
                 </div>
                 <div class="card custom-card" style="overflow: hidden">
                     <div class="card-body" style="padding: 0;">
-                        <a class="main_box_sign_up d-flex align-items-center justify-content-center mb-4" style="cursor: pointer">
+                        <a class="main_box_sign_up d-flex align-items-center justify-content-center mb-4" href="{{route('user-register')}}" style="cursor: pointer">
                             <span>Not with us?</span>&nbsp;
                             <b>Sign up now!</b>
                         </a>
@@ -618,10 +618,10 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <p class="fs-12 text-muted mt-3">Dont have an account? <a href="sign-up-basic.html"
                                         class="text-primary">Sign Up</a></p>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- <div class="text-center my-3 authentication-barrier">
                             <span>OR</span>
