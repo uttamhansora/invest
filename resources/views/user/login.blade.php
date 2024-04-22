@@ -29,6 +29,75 @@
     <!-- Icons Css -->
     <link href="{{asset('userpanel/assets/css/icons.min.css')}}" rel="stylesheet">
 
+    <style>
+        .main_box_sign_up
+        {
+            padding: 10px 20px;
+            width: 100%;
+            background-color: #845adf;
+            color: #fff;
+            font-size: 18px;
+        }
+        .main_box_sign_up:hover{
+            color: #fff;
+        }
+        .box {
+            width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  font-family: Poppins;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* Set the initial styling and transition for the label */
+.box label {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 0 10px;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  transition: 0.5s;
+  background-color: transparent;
+}
+
+/* Styling for the input field */
+.box input {
+  width: 100%;
+  font-family: Poppins;
+  padding: 20px 0 5px 10px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  transition: 0.5s;
+  background-color: transparent;
+}
+
+/* Label transition when the input is focused or not empty */
+.box input:focus + label,
+.box input:not(:placeholder-shown) + label {
+  transform: translateY(-30%);
+  font-size: 0.6rem;
+}
+
+/* Change the border color when the input is not empty */
+.box input:not(:placeholder-shown) {
+  border-bottom: 3px solid #00ff0066;
+}
+.box input::placeholder{
+    color: transparent;
+}
+.btn.btn-light{
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+}
+    </style>
+
 
 </head>
 
@@ -504,45 +573,55 @@
                             class="desktop-dark">
                     </a>
                 </div>
-                <div class="card custom-card">
-                    <div class="card-body p-5">
-                        <p class="h5 fw-semibold mb-2 text-center">Sign In</p>
-                        <!-- <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p> -->
-                        <div class="row gy-3">
-                            <form action="{{route('user-login-post')}}" method="post">
-                                @csrf
-                                <div class="col-xl-12">
-                                    <label for="signin-username" class="form-label text-default">Email</label>
-                                    <input type="email" class="form-control form-control-lg" id="signin-username"
-                                    name="email" placeholder="Email">
-                                </div>
-                                <div class="col-xl-12 mb-2 mt-2">
-                                    <!-- <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end text-danger">Forget password ?</a></label> -->
-                                    <div class="input-group">
-                                        <input type="password" class="form-control form-control-lg" id="signin-password"
-                                        name="password" placeholder="Password">
-                                        <button class="btn btn-light" type="button"
-                                            onclick="createpassword('signin-password',this)" id="button-addon2"><i
-                                                class="ri-eye-off-line align-middle"></i></button>
-                                    </div>
-                                    <div class="mt-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <!-- <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
-                                            Remember password ?
-                                        </label> -->
+                <div class="card custom-card" style="overflow: hidden">
+                    <div class="card-body" style="padding: 0;">
+                        <a class="main_box_sign_up d-flex align-items-center justify-content-center mb-4" style="cursor: pointer">
+                            <span>Not with us?</span>&nbsp;
+                            <b>Sign up now!</b>
+                        </a>
+                        <div class="pb-5 px-5">
+                            <p class="h5 fw-semibold mb-2 text-center">Sign In</p>
+                            <!-- <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p> -->
+                            <div class="row gy-3">
+                                <form action="{{route('user-login-post')}}" method="post">
+                                    @csrf
+                                    <div class="col-xl-12">
+                                        <div class="box">
+                                            <!-- The input field with a unique ID -->
+                                            <input type="email" id="signin-username" name="email" placeholder="Email">
+                                            <!-- The label with 'for' attribute pointing to the input field's ID -->
+                                            <label for="signin-username">Email</label>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 d-grid mt-2">
+                                    <div class="col-xl-12 mb-4 mt-3">
+                                        <!-- <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end text-danger">Forget password ?</a></label> -->
+                                        <div class="box">
+                                            <input type="password" id="signin-password" name="password" placeholder="Password">
+                                            <label for="signin-password">Password</label>
+                                            <!-- Include the button inside the 'box' but after the input field -->
+                                            <button class="btn btn-light" type="button"
+                                                onclick="createpassword('signin-password',this)" id="button-addon2"><i
+                                                    class="ri-eye-off-line align-middle"></i></button>
+                                          </div>
+                                        <div class="mt-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                <!-- <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
+                                                Remember password ?
+                                            </label> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 d-grid mt-2">
 
-                                    <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="text-center">
-                            <p class="fs-12 text-muted mt-3">Dont have an account? <a href="sign-up-basic.html"
-                                    class="text-primary">Sign Up</a></p>
+                                        <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="text-center">
+                                <p class="fs-12 text-muted mt-3">Dont have an account? <a href="sign-up-basic.html"
+                                        class="text-primary">Sign Up</a></p>
+                            </div>
                         </div>
                         <!-- <div class="text-center my-3 authentication-barrier">
                             <span>OR</span>
