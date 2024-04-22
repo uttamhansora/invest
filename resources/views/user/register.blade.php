@@ -153,7 +153,7 @@
           </div> --}}
         </div>
         <div class="box mb-4">
-        <select class="form-control" name="country" value="{{old('country')}}" id="countryDropdown" required>
+        <select class="form-control select2" name="country" value="{{old('country')}}" id="countryDropdown" required>
             <option value="" selected>Select Country</option>
             @foreach($country as $v)
             <option value="{{$v->id}}">{{$v->name}}</option>
@@ -162,12 +162,12 @@
         </select>
         </div>
         <div class="box mb-4">
-        <select class="form-control" name="state" value="{{old('state')}}" id="stateDropdown" required>
+        <select class="form-control select2state" name="state" value="{{old('state')}}" id="stateDropdown" required>
             <option value="">Select State</option>
         </select>
         </div>
         <div class="box mb-4">
-        <select class="form-control" name="city" value="{{old('city')}}" id="cityDropdown" required>
+        <select class="form-control select2city" name="city" value="{{old('city')}}" id="cityDropdown" required>
             <option value="" selected>Select City</option>
         </select>
         </div>
