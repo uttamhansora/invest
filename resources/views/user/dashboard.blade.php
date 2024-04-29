@@ -5,7 +5,7 @@
 .widget-container {
     z-index: 2;
     display: block;
-    width: 502px;
+    width: 650px;
     height: auto;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .total-balance-card {
-    width: calc(50% - 10px);
+    width: calc(100% - 10px);
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 10px;
@@ -101,7 +101,7 @@ i {
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    <div style="display: flex;justify-content: space-around;">
+    <div style="display: flex;justify-content: space-between;" class="px-4">
     <gridster-item class="widget-container">
         <app-gridster-widget-factory id="totalBalance">
             <div class="widget-header">
@@ -118,17 +118,17 @@ i {
                         <div class="wrapper">
                             <div class="control-panel" style="display: flex;justify-content: space-between;align-items: center;">
                                 <span>Last Update 2024-04-15 13:00:03</span>
-                                
+
                                     <span class="mat-button-wrapper">
                                     <i class='bx bx-refresh' ></i>
                                     </span>
-                                
+
                             </div>
                             <app-base-chart class="chart"></app-base-chart>
                         </div>
                     </div>
                     <div class="total-balance-list">
-                        <div class="total-balance-card">
+                        {{-- <div class="total-balance-card">
                             <div class="color-indicator" style="background-color: rgb(36, 84, 255);"></div>
                             <dl>
                                 <dt>BTC</dt>
@@ -149,7 +149,7 @@ i {
                                 <dt>0 ETH</dt>
                                 <dd>0 USD</dd>
                             </dl>
-                        </div>
+                        </div> --}}
                         <div class="total-balance-card">
                             <div class="color-indicator" style="background-color: rgb(255, 122, 0);"></div>
                             <dl>
@@ -161,7 +161,7 @@ i {
                                 <dd>0 USD</dd>
                             </dl>
                         </div>
-                        <div class="total-balance-card">
+                        {{-- <div class="total-balance-card">
                             <div class="color-indicator" style="background-color: rgb(255, 214, 50);"></div>
                             <dl>
                                 <dt>USD</dt>
@@ -171,7 +171,7 @@ i {
                                 <dt>0 USD</dt>
                                 <dd>0 USD</dd>
                             </dl>
-                        </div>
+                        </div> --}}
                     </div>
                 </app-total-balance>
             </div>
@@ -182,7 +182,7 @@ i {
             <div class="widget-header">
                 <div class="widget-label">
                     <app-icon class="widget-header-icon">
-                    
+
                     <i style="color:green" class='bx bxs-badge-check' ></i>
                     </app-icon>
                     <span>VerifiCation Status</span>
@@ -194,11 +194,11 @@ i {
                         <div class="wrapper">
                             <div class="control-panel" style="display: flex;justify-content: space-between;align-items: center;">
                                 <span>Last Update 2024-04-15 13:00:03</span>
-                                
+
                                     <span class="mat-button-wrapper">
                                     <i class='bx bx-refresh' ></i>
                                     </span>
-                                
+
                             </div>
                             <app-base-chart class="chart"></app-base-chart>
                         </div>
@@ -211,7 +211,7 @@ i {
                                         <th>Doc ..</th>
                                         <th>Upload Date</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -221,12 +221,12 @@ i {
                                       <td></td>
                                       <td>{{$data->created_at->format('d-m-Y')}}</td>
                                       <td>{{$data->status}}</td>
-                                        
-                                       
-                                       
+
+
+
                                     </tr>
                                     @endforeach
-                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -234,7 +234,7 @@ i {
                                         <th>Doc ..</th>
                                         <th>Upload Date</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </tfoot>
                             </table>
@@ -249,12 +249,12 @@ i {
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Wallet History</h3>
+                        <div class="card-header" style="background-color: #111c43 !important">
+                            <h3 class="card-title text-white" style="margin-bottom: 0">Transaction History</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>User Name</th>
@@ -264,7 +264,7 @@ i {
                                         <th>Intrest</th>
                                         <th>Type</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -275,10 +275,10 @@ i {
                                         <td>{{$data->date ?? '--'}}</td>
                                         <td>{{$data->amount}}</td>
                                         <td>{{$data->intrest ?? '--'}}</td>
-                                        
+
                                         <td>
                                         @if($data->model_name=='Withdraw')
-                                          
+
                                           <div class="text-danger font-weight-bold"><span>{{$data->model_name}}</span></div>
                                         @else
                                         <div class="text-success font-weight-bold"><span>{{$data->model_name}}</span></div>
@@ -292,14 +292,14 @@ i {
                                             @else
                                             <div class="badge bg-danger">Rejected</div>
                                             @endif
-                                            
+
                                         </td>
-                                        
-                                       
-                                       
+
+
+
                                     </tr>
                                     @endforeach
-                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -310,10 +310,13 @@ i {
                                         <th>Intrest</th>
                                         <th>Type</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('user.wallet-history') }}">See All Records</a>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                     </div>

@@ -7,6 +7,9 @@ body {
     margin: 0;
     padding: 0;
 }
+dt{
+    color: #000 !important;
+}
 
 .container {
     max-width: 1200px;
@@ -149,19 +152,19 @@ body {
             <div class="row">
             <div class="col-12" style="display: flex;justify-content: space-around;">
                 <!-- left column -->
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-6 pe-4">
+                    <div class="card h-100">
                         <div class="card-header">
-                            <div class="card-header-icon">
+                            {{-- <div class="card-header-icon">
                                 <svg role="img">
                                     <use xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-account">
                                     </use>
                                 </svg>
-                            </div>
+                            </div> --}}
                             Profile Settings
                         </div>
-                        <div class="card-content" style="display: flex;justify-content: space-around;">
-                            <div>
+                        <div class="card-content row mt-4">
+                            <div class="col-md-4">
                                 <div class="avatar-wrapper">
                                     <img src="/path/to/avatar.jpg" alt="Avatar">
                                     <div class="upload-button">
@@ -174,41 +177,41 @@ body {
                                 </div>
                                 <br />
                             </div>
-                            <div>
+                            <div class="col-md-8">
                                 <div class="info-list" >
-                                    <div>
-                                        <dt>ID</dt>
-                                        <dd>{{auth()->user()->id}}</dd>
+                                    <div class="d-flex align-items-center">
+                                        <dt>ID:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->id}}</dd>
                                     </div>
-                                    <div>
-                                        <dt>Email</dt>
-                                        <dd>{{auth()->user()->email}}</dd>
+                                    <div class="d-flex align-items-center my-2">
+                                        <dt>Email:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->email}}</dd>
                                     </div>
                                 </div>
                                 <div style="display: flex;justify-content: flex-start;">
-                                    <div>
-                                        <dt>Password</dt>
-                                        <dd>••••••••••••••</dd>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <dt>Password:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">••••••••••••••</dd>
                                     </div>
                                     <div class="edit-link-icon">
                                         <i class='bx bx-edit-alt'></i>
-                                        
+
                                     </div>
                                 </div>
                                 <div>
-                                    <dl>
-                                        <dt>Nickname</dt>
-                                        <dd>UttamHansora74931</dd>
+                                    <dl style="margin-bottom: 0" class="d-flex align-items-center">
+                                        <dt>Nickname:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">UttamHansora74931</dd>
                                     </dl>
                                     <div class="edit-link-icon">
                                         <i class='bx bx-edit-alt'></i>
                                         Change Nickname
                                     </div>
                                 </div>
-                                <div>
+                                <div class="mt-2">
                                     <dl>
-                                        <dt>Verification Status</dt>
-                                        <dd>{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
+                                        <dt>Verification Status:</dt>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
                                     </dl>
                                     @if(auth()->user()->doc_verify == '0')
                                     <div style=" display: flex;align-items: center;">
@@ -228,20 +231,20 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-7">
-                <div class="card">
+                {{-- <div class="col-md-1"></div> --}}
+                <div class="col-6 ps-4">
+                <div class="card h-100">
                         <div class="card-header">
-                            <div class="card-header-icon">
+                            {{-- <div class="card-header-icon">
                                 <svg role="img">
                                     <use xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-account">
                                     </use>
                                 </svg>
-                            </div>
+                            </div> --}}
                             Account Settings
                         </div>
-                        <div class="card-content" style="display: flex;justify-content: space-around;">
-                            <div>
+                        <div class="card-content row mt-4">
+                            <div class="col-md-4">
                                 <div class="avatar-wrapper">
                                     <img src="/path/to/avatar.jpg" alt="Avatar">
                                     <div class="upload-button">
@@ -254,41 +257,41 @@ body {
                                 </div>
                                 <br />
                             </div>
-                            <div>
+                            <div class="col-md-8">
                                 <div class="info-list">
-                                    <dl>
-                                        <dt>ID</dt>
-                                        <dd>{{auth()->user()->id}}</dd>
+                                    <dl class="d-flex align-items-center">
+                                        <dt>ID:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->id}}</dd>
                                     </dl>
-                                    <dl>
-                                        <dt>Email</dt>
-                                        <dd>{{auth()->user()->email}}</dd>
+                                    <dl class="d-flex align-items-center">
+                                        <dt>Email:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->email}}</dd>
                                     </dl>
                                 </div>
                                 <div>
-                                    <dl>
+                                    <dl class="d-flex align-items-center" style="margin-bottom: 0">
                                         <dt>Password</dt>
-                                        <dd>••••••••••••••</dd>
+                                        <dd style="margin-bottom: 0">••••••••••••••</dd>
                                     </dl>
                                     <div class="edit-link-icon">
                                         <i class='bx bx-edit-alt'></i>
                                         Change Password
                                     </div>
                                 </div>
-                                <div>
-                                    <dl>
-                                        <dt>Nickname</dt>
-                                        <dd>UttamHansora74931</dd>
+                                <div class="mt-3">
+                                    <dl class="d-flex align-items-center" style="margin-bottom: 0">
+                                        <dt>Nickname:&nbsp;</dt>
+                                        <dd style="margin-bottom: 0">UttamHansora74931</dd>
                                     </dl>
                                     <div class="edit-link-icon">
                                         <i class='bx bx-edit-alt'></i>
                                         Change Nickname
                                     </div>
                                 </div>
-                                <div>
+                                <div class="mt-3">
                                     <dl>
                                         <dt>Verification Status</dt>
-                                        <dd>{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
+                                        <dd style="margin-bottom: 0">{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
                                     </dl>
                                     @if(auth()->user()->doc_verify == '0')
                                     <div style=" display: flex;align-items: center;">

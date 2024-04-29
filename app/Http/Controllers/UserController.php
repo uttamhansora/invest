@@ -52,14 +52,14 @@ class UserController extends Controller
                 return $record;
             });
             $mergedRecords = $deposit->merge($withdraw);
-            $mergedRecords = $mergedRecords->sortByDesc('created_at');
+            $mergedRecords = $mergedRecords->sortByDesc('created_at')->take(5);
             $doc=\App\Models\Document::where('user_id',auth()->user()->id)->get();
             return view('user.dashboard',compact('mergedRecords','doc'));
         }catch (\Exception $e) {
             // If an exception occurs during the process
             return back()->with('error', 'Error: ' . $e->getMessage());
         }
-    }
+}
     
     public function logout(Request $request)
     {
