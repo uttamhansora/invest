@@ -39,8 +39,8 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">Withdraw</h3>
+            <div class="card-header" style="background-color: #111C43 !important;color:#fff;">
+              <h3 class="card-title" style="margin: 0;">Withdraw</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -48,16 +48,16 @@
               @csrf
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Withdraw Amount</label>
-                  <input type="text" name="withdrawamount" class="form-control" id=""
+                  <label for="exampleInputEmail1" class="fs-6">Withdraw Amount <b>(Available Balance: &nbsp;${{auth()->user()->withdraw_amount}})</b></label>
+                  <input type="text" name="withdrawamount" class="form-control mt-2 mb-1" id=""
                     placeholder="Enter Withdraw Amount" required>
                     <small style="color:red">Make Sure Your QR Code / Wallet ID Is Update In Profile</small> 
                     <br/>
-                    <a href="{{route('user-profile')}}">Add Qr Code Or Wallet ID</a>
+                    <a href="{{route('user-profile')}}" class="mt-3 d-block">Add Qr Code Or Wallet ID</a>
                 </div>
              </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn" style="background-color: #111C43 !important;color:#fff;">Submit</button>
               </div>
             </form>
           </div>

@@ -112,7 +112,7 @@
             <b>Sign in now!</b>
         </a>
       <div class="p-4">
-        <p class="login-box-msg">Register a new membership</p>
+        <p style="font-size:18px" class="login-box-msg">Register a new membership</p>
 
       <form action="{{route('user-register-post')}}" method="POST">
         @csrf
@@ -174,6 +174,15 @@
         <div class="box mb-3">
           <input type="password" id="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Password">
           <label for="password">Password</label>
+          {{-- <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div> --}}
+        </div>
+        <div class="box mb-3">
+          <input type="password" id="password" name="password_confirmation" value="{{old('password_confirmation')}}" class="form-control" placeholder="Confirm Password">
+          <label for="password">Confirm Password</label>
           {{-- <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

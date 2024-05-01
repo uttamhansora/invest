@@ -46,6 +46,7 @@ Route::get('user-wallet-history',[UserController::class,'wallethistory'])->name(
 Route::get('/user.logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/user-profile', [UserController::class, 'userprofile'])->name('user-profile');
 Route::post('/update-user-profile', [UserController::class, 'updateuserprofile'])->name('update-user-profile');
+Route::post('/updateqrandwalletid', [UserController::class, 'updateqrandwalletid'])->name('updateqrandwalletid');
 Route::post('/selectplan', [UserController::class, 'selectplan'])->name('selectplan');
 Route::post('/depositamount', [UserController::class, 'depositamount'])->name('deposit-amount');
 Route::post('/submitwithdraw', [UserController::class, 'submitwithdraw'])->name('submit-withdraw');

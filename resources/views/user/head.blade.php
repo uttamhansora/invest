@@ -580,16 +580,16 @@
                     <!-- Start::header-element -->
                     <div class="header-element header-search">
                     
-        <a class="header-link">
+        <!-- <a class="header-link">
             
             @if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
             <i class="fas fa-solid fa-wallet"></i> &nbsp;<span class="op-10 fs-13">WithDraw Amount:&nbsp;</span> <strong>${{auth()->user()->withdraw_amount}}</strong>
             @else
             <i class="text-danger fas fa-solid fa-wallet"></i> &nbsp;<strong class="text-danger">$0</strong>
             @endif
-          </a>
+          </a> -->
         
-          
+<!--           
           <a class="header-link">  
             
             @if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
@@ -597,7 +597,7 @@
             @else
             <i class="text-danger fas fa-solid fa-wallet"></i> &nbsp;<strong class="text-danger">$0</strong>
             @endif
-          </a>
+          </a> -->
         
                     </div>
                     <!-- End::header-element -->

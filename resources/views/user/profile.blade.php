@@ -122,6 +122,22 @@ dt{
     height: 100%;
     /* Adjust height as needed */
 }
+.veribadge::before{
+    width:1px;
+    height:100%;
+    position:absolute;
+    left:0;
+    background-color:#ccc;
+    top:0;
+    content:'';
+    margin-right:10px
+
+}
+.veribadge{
+    position: relative;
+    
+}
+
 </style>
 <div class="main-content app-content">
 
@@ -150,11 +166,12 @@ dt{
     <section class="content">
         <div class="container-fluid p-4">
             <div class="row">
-            <div class="col-12" style="display: flex;justify-content: space-around;">
+            <div class="col-12" >
                 <!-- left column -->
-                <div class="col-md-6 pe-4">
+                <div class="row w-100">
+                <div class="col-md-6 pe-md-4 mt-md-1">
                     <div class="card h-100">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #111C43 !important;color:#fff;">
                             {{-- <div class="card-header-icon">
                                 <svg role="img">
                                     <use xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-account">
@@ -166,13 +183,9 @@ dt{
                         <div class="card-content row mt-4">
                             <div class="col-md-4">
                                 <div class="avatar-wrapper">
-                                    <img src="/path/to/avatar.jpg" alt="Avatar">
+                                    <img src="{{asset('man.png')}}" alt="Avatar">
                                     <div class="upload-button">
-                                        <svg role="img">
-                                            <use
-                                                xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-camera">
-                                            </use>
-                                        </svg>
+                                        
                                     </div>
                                 </div>
                                 <br />
@@ -211,9 +224,15 @@ dt{
                                 <div class="mt-2">
                                     <dl>
                                         <dt>Verification Status:</dt>
-                                        <dd style="margin-bottom: 0">{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
+                                        <dd style="margin-bottom: 0">
+                                        @if(auth()->user()->doc_verify == '0' || auth()->user()->doc_verify == '1')
+                                        Pending
+                                        @else
+                                        Done
+                                        @endif
+                                        </dd>
                                     </dl>
-                                    @if(auth()->user()->doc_verify == '0')
+                                    @if(auth()->user()->doc_verify == '0' || auth()->user()->doc_verify == '1')
                                     <div style=" display: flex;align-items: center;">
                                         <i style="font-size:25px;color:red" class='bx bx-time-five bx-tada'></i>
                                         &nbsp;
@@ -221,7 +240,7 @@ dt{
                                     </div>
                                     @else
                                     <div class="" style=" display: flex;align-items: center;">
-                                        <i style="font-size:25px" class='bx bx-check-square bx-tada success-icon'></i>
+                                        <i style="font-size:25px;color:green" class='bx bxs-badge-check'></i>
                                         &nbsp;
                                         Submitted
                                     </div>
@@ -232,68 +251,38 @@ dt{
                     </div>
                 </div>
                 {{-- <div class="col-md-1"></div> --}}
-                <div class="col-6 ps-4">
+                <div class="col-md-6 ps-md-4 mt-md-1 mt-4">
                 <div class="card h-100">
-                        <div class="card-header">
-                            {{-- <div class="card-header-icon">
-                                <svg role="img">
-                                    <use xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-account">
-                                    </use>
-                                </svg>
-                            </div> --}}
-                            Account Settings
+                        <div class="card-header" style="background-color: #111C43 !important;color:#fff;">
+                            
+                            Verification And QR Code
                         </div>
                         <div class="card-content row mt-4">
                             <div class="col-md-4">
-                                <div class="avatar-wrapper">
-                                    <img src="/path/to/avatar.jpg" alt="Avatar">
-                                    <div class="upload-button">
-                                        <svg role="img">
-                                            <use
-                                                xlink:href="/assets/img/icon-sprite.svg?cacheOff=1712237277946#icon-camera">
-                                            </use>
-                                        </svg>
-                                    </div>
+                                <div style="width:150px;height:150px;overflow:hidden">
+                                    <img width="100%" src="{{asset('images/'.auth()->user()->qr_code_image ?? '')}}" alt="Avatar">
+                                   <form action="{{route('updateqrandwalletid')}}" method="POST" enctype="multipart/form-data">
+                                   @csrf
                                 </div>
+                                <label>Update Qr Code</label>
+                                <br/>
+                                <input type="file" name="qr_code_image" class="form-control">
                                 <br />
+                                <label>Your Wallet Id</label>
+                                <br/>
+                                <input type="text" class="form-control" name="wallet_id" value="{{auth()->user()->wallet_id ?? ''}}">
+                                <br/>
+                                <button type="submit" class="btn btn-dark">Save Settings</button>
+                            </form>
                             </div>
-                            <div class="col-md-8">
-                                <div class="info-list">
-                                    <dl class="d-flex align-items-center">
-                                        <dt>ID:&nbsp;</dt>
-                                        <dd style="margin-bottom: 0">{{auth()->user()->id}}</dd>
-                                    </dl>
-                                    <dl class="d-flex align-items-center">
-                                        <dt>Email:&nbsp;</dt>
-                                        <dd style="margin-bottom: 0">{{auth()->user()->email}}</dd>
-                                    </dl>
-                                </div>
-                                <div>
-                                    <dl class="d-flex align-items-center" style="margin-bottom: 0">
-                                        <dt>Password</dt>
-                                        <dd style="margin-bottom: 0">••••••••••••••</dd>
-                                    </dl>
-                                    <div class="edit-link-icon">
-                                        <i class='bx bx-edit-alt'></i>
-                                        Change Password
-                                    </div>
-                                </div>
+                            
+                            <div class="col-md-8 veribadge">
+                                
+                               
                                 <div class="mt-3">
-                                    <dl class="d-flex align-items-center" style="margin-bottom: 0">
-                                        <dt>Nickname:&nbsp;</dt>
-                                        <dd style="margin-bottom: 0">UttamHansora74931</dd>
-                                    </dl>
-                                    <div class="edit-link-icon">
-                                        <i class='bx bx-edit-alt'></i>
-                                        Change Nickname
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <dl>
-                                        <dt>Verification Status</dt>
-                                        <dd style="margin-bottom: 0">{{auth()->user()->doc_verify == '0' ? 'Pending' : 'Submitted'}}</dd>
-                                    </dl>
-                                    @if(auth()->user()->doc_verify == '0')
+                                   
+                                    <dt>Verification Status</dt>
+                                    @if(auth()->user()->doc_verify == '0' || auth()->user()->doc_verify == '1')
                                     <div style=" display: flex;align-items: center;">
                                         <i style="font-size:25px;color:red" class='bx bx-time-five bx-tada'></i>
                                         &nbsp;
@@ -301,16 +290,32 @@ dt{
                                     </div>
                                     @else
                                     <div class="" style=" display: flex;align-items: center;">
-                                        <i style="font-size:25px" class='bx bx-check-square bx-tada success-icon'></i>
+                                        <i style="font-size:25px;color:green" class='bx bxs-badge-check'></i>
                                         &nbsp;
                                         Submitted
                                     </div>
                                     @endif
                                 </div>
+                                <div class="mt-3">
+                                   <?php
+                                   $doc=\App\Models\Document::where('user_id',auth()->user()->id)->first();
+                                   ?>
+                                   <dt>Document Type</dt>
+                                   <span>{{$doc->document_type}}</span>
+                                   <br/>
+                                   <dt>Uploaded Documents</dt>
+                                   @if($doc)
+                                   <span>{{$doc->status}}</span>
+                                   <div style=" display: flex;align-items: center;">
+                                       <img style="height:200px;width:200px" src="{{asset("app/public/".$doc->document_path ?? '')}}">
+                                   </div>
+                                   @endif
+                               </div>
                             </div>
                         </div>
                     </div>
                     <!-- Content for the right column -->
+                </div>
                 </div>
                 </div>
 

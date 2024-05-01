@@ -45,7 +45,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>User Name</th>
+                                        <!-- <th>User Name</th> -->
                                         <th>Request Date</th>
                                         <th>Response Date</th>
                                         <th>Amount</th>
@@ -58,7 +58,7 @@
                                 <tbody>
                                     @foreach($mergedRecords as $data)
                                     <tr>
-                                        <td>{{$data->users->first_name}}</td>
+                                        <!-- <td>{{$data->users->first_name}}</td> -->
                                         <td>{{$data->created_at->format('d-m-Y H:i:s')}}</td>
                                         <td>{{$data->date ?? '--'}}</td>
                                         <td>{{$data->amount}}</td>
@@ -91,7 +91,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>User Name</th>
+                                        <!-- <th>User Name</th> -->
                                         <th>Request Date</th>
                                         <th>Response Date</th>
                                         <th>Amount</th>

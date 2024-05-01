@@ -200,7 +200,7 @@ class UserController extends Controller
         $startDate = \Carbon\Carbon::now();
         $endDate = $startDate->copy()->addMonths($duration);
         $checkexitplan=\App\Models\SubScription::where(['user_id'=>auth()->user()->id,'subscription_id'=>$request->id,'is_end'=>'no'])->first();
-        if(!$checkexitplan){
+       
             $new=new \App\Models\SubScription();
             $new->user_id=auth()->user()->id;
             $new->subscription_id=$request->id;
@@ -208,9 +208,7 @@ class UserController extends Controller
             $new->end_Date=$endDate;
             $new->save();
             return true;
-        }else{
-            return false;
-        }
+       
         
     }
     public function wallethistory(){
@@ -231,7 +229,7 @@ class UserController extends Controller
             $this->validate($request, [
                 'first_name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email',
-                'password' => 'required|string|min:6',
+                'password' => 'required|string|min:6|confirmed',
                 'last_name' => 'required|string|max:255',
                 'country' => 'required|string|max:255',
                 'state' => 'required|string|max:255',
@@ -267,6 +265,33 @@ class UserController extends Controller
         $states = $country->states()->select('id', 'name')->get();
 
         return response()->json(['states' => $states]);
+    }
+    public function updateqrandwalletid(Request $request){
+        try {
+            $data=auth()->user();
+            $data->wallet_id=$request->wallet_id;
+            $imageName=auth()->user()->qr_code_image ?? '';
+            // Check if a file is uploaded
+            if ($request->hasFile('qr_code_image')) {
+                // Get the file from the request
+                $image = $request->file('qr_code_image');
+ 
+                // Generate a unique name for the file
+                $imageName = time() . '_' . $image->getClientOriginalName();
+ 
+                // Move the uploaded file to the desired location
+                $image->move(public_path('images'), $imageName);
+ 
+                // Save the file name to the database
+              
+            }
+            $data->qr_code_image=$imageName;
+            $data->save();
+            return redirect()->back()->with('success', 'Settings Update SuccessFully.');
+        }catch (\Exception $e) {
+            // If an exception occurs during the process
+            return back()->with('error', 'Error: ' . $e->getMessage())->withInput();;
+        }
     }
     public function getcity(Request $request)
     {

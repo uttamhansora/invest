@@ -19,12 +19,15 @@
         color: #464c50;
         font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
         letter-spacing: 1px;
+        background-color: #111C43;
+        color: #fff;
+        border-radius:10px
     }
 
     .plan-description {
         padding: 15px;
         line-height: normal;
-        min-height: 175px;
+        /* min-height: 175px; */
         font-size: 14px;
         line-height: 18px;
     }
@@ -37,7 +40,7 @@
 
     .plan-price {
         color: #56575b;
-        font-family: "Open sans";
+        /* font-family: "Open sans"; */
         font-size: 34px;
         text-transform: uppercase;
         line-height: 50px;
@@ -51,8 +54,10 @@
     }
 
     .plan-description.specs {
-        min-height: 200px;
-        line-height: 20px;
+        font-size: 16px;
+        min-height: 130px;
+        line-height: 25px;
+        padding-top: 0;
     }
 
     .plan-cta {
@@ -62,7 +67,7 @@
         width: 100%;
         text-align: center;
         padding: 0 15px;
-        min-height: 95px;
+        min-height: 0;
 
         &:hover a {
             opacity: 0.8;
@@ -87,6 +92,9 @@
 
 /* For modern browsers */
 .clamped-text {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 25px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -108,7 +116,7 @@
 <div class="main-content app-content">
 
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <div class="content-header px-4 pt-4">
         @if(auth()->user()->is_active == 2)
         <div class="callout callout-warning">
             <h5>Warning !</h5>
@@ -143,8 +151,8 @@
                 @php
                 $selected=\App\Models\SubScription::where(['user_id'=>auth()->user()->id,'subscription_id'=>$v->id])->first();
                 @endphp
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 px-md-4">
+                    <div class="card" style="border-radius: 10px;height: 100%;">
                         <div class="card-body" @if(isset($selected) && ! \Carbon\Carbon::parse($selected->
                             end_date)->isPast())
                             style="background-color: aquamarine;"
@@ -165,7 +173,7 @@
                                 @if(isset($selected) && ! \Carbon\Carbon::parse($selected->end_date)->isPast())
                                 <p><button class="btn btn-dark disabled" href="javascript:void(0)">Selected</button></p>
                                 @else
-                                <p><a class="button" href="javascript:void(0)"
+                                <p><a class="btn" style="background-color: #111C43;color: #fff;" href="javascript:void(0)"
                                         onclick="confirmplan({{$v->id}})">Select</a></p>
                                 @endif
 
@@ -178,7 +186,7 @@
         </div>
         <!-- ./container-->
     </section>
-    <h2 class="m-0">Active Scription</h2>
+    <h2 class="m-0 px-4 pt-4">Active Scription</h2>
     <section class="content">
         <div class="container-fluid p-4">
             <div class="row">
@@ -186,8 +194,8 @@
                 @php
                 $selected=\App\Models\SubScription::where(['user_id'=>auth()->user()->id,'subscription_id'=>$v->id])->first();
                 @endphp
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 px-md-4">
+                    <div class="card" style="border-radius: 10px;height: 100%;">
                         <div class="card-body" 
                             >
                             <div class="plan-name">
@@ -205,7 +213,7 @@
                                 @if(isset($selected) && ! \Carbon\Carbon::parse($selected->end_date)->isPast())
                                 <p><button class="btn btn-dark disabled" href="javascript:void(0)">Selected</button></p>
                                 @else
-                                <p><a class="button" href="javascript:void(0)"
+                                <p><a class="btn"  style="background-color: #111C43;color: #fff;" href="javascript:void(0)"
                                         onclick="confirmplan({{$v->id}})">Select</a></p>
                                 @endif
 
@@ -218,7 +226,7 @@
         </div>
         <!-- ./container-->
     </section>
-    <h2 class="m-0">Complated Scription</h2>
+    <h2 class="m-0 px-4 pt-4">Complated Scription</h2>
     <section class="content">
         <div class="container-fluid p-4">
             <div class="row">
@@ -226,8 +234,8 @@
                 @php
                 $selected=\App\Models\SubScription::where(['user_id'=>auth()->user()->id,'subscription_id'=>$v->id])->first();
                 @endphp
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 px-md-4">
+                    <div class="card" style="border-radius: 10px;height: 100%;">
                         <div class="card-body" 
                             >
                             <div class="plan-name">
@@ -245,7 +253,7 @@
                                 @if(isset($selected) && ! \Carbon\Carbon::parse($selected->end_date)->isPast())
                                 <p><button class="btn btn-dark disabled" href="javascript:void(0)">Selected</button></p>
                                 @else
-                                <p><a class="button" href="javascript:void(0)"
+                                <p><a class="btn" style="background-color: #111C43;color: #fff;" href="javascript:void(0)"
                                         onclick="confirmplan({{$v->id}})">Select</a></p>
                                 @endif
 
