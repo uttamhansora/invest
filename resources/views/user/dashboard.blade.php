@@ -96,7 +96,15 @@
             background-color: #0A2235;
             color: #fff !important;
         }
-
+        .iconnames{
+            width: calc(25% - 20px);
+        }
+        @media screen and (max-width:991px) {
+            .iconnames{
+            width: calc(50% - 20px);
+        }
+        }
+       
         /* Add more styles as needed */
     </style>
 
@@ -208,7 +216,7 @@
                     <div class="mt-5">
                         <h5 class="fs-bold"><i class="bi bi-star-fill fs-6 pe-2"></i></i>Quick Links</h5>
                         <div class="d-flex flex-wrap justify-content-center">
-                            <a href="{{route('user.subscription')}}" class="d-flex justify-content-center py-3" style="width: calc(20% - 20px); margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+                            <a href="{{route('user.subscription')}}" class="d-flex justify-content-center py-3 iconnames" style="margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
                                 <div>
                                     <div  class="d-flex justify-content-center align-items-center">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50px;height: 50px;border-radius: 50%;background-color: #111c43;color: #fff">
@@ -218,7 +226,7 @@
                                     <p class="fs-6 mt-2" style="margin-bottom: 0">Subscription</p>
                                 </div>
                             </a>
-                            <a href="{{route('user.deposit')}}" class="d-flex justify-content-center py-3" style="width: calc(20% - 20px); margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+                            <a href="{{route('user.deposit')}}" class="d-flex justify-content-center py-3 iconnames" style="margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
                                 <div>
                                     <div  class="d-flex justify-content-center align-items-center">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50px;height: 50px;border-radius: 50%;background-color: #111c43;color: #fff">
@@ -228,7 +236,7 @@
                                     <p class="fs-6 mt-2" style="margin-bottom: 0">Deposit</p>
                                 </div>
                             </a>
-                            <a href="{{route('user.withdraw')}}" class="d-flex justify-content-center py-3" style="width: calc(20% - 20px); margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+                            <a href="{{route('user.withdraw')}}" class="d-flex justify-content-center py-3 iconnames" style="margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
                                 <div>
                                     <div  class="d-flex justify-content-center align-items-center">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50px;height: 50px;border-radius: 50%;background-color: #111c43;color: #fff">
@@ -238,7 +246,7 @@
                                     <p class="fs-6 mt-2" style="margin-bottom: 0">Withdraw</p>
                                 </div>
                             </a>
-                            <a href="{{route('user.wallet-history')}}" class="d-flex justify-content-center py-3" style="width: calc(20% - 20px); margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+                            <a href="{{route('user.wallet-history')}}" class="d-flex justify-content-center py-3 iconnames" style="margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
                                 <div>
                                     <div  class="d-flex justify-content-center align-items-center">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50px;height: 50px;border-radius: 50%;background-color: #111c43;color: #fff">
@@ -248,7 +256,7 @@
                                     <p class="fs-6 mt-2" style="margin-bottom: 0">Wallet History</p>
                                 </div>
                             </a>
-                            <a href="{{route('user-profile')}}" class="d-flex justify-content-center py-3" style="width: calc(20% - 20px); margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+                            <a href="{{route('user-profile')}}" class="d-flex justify-content-center py-3 iconnames" style="margin: 10px;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
                                 <div>
                                     <div  class="d-flex justify-content-center align-items-center">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50px;height: 50px;border-radius: 50%;background-color: #111c43;color: #fff">
