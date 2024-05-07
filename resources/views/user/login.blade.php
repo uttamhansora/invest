@@ -46,7 +46,6 @@
   display: inline-flex;
   flex-direction: column;
   position: relative;
-  font-family: Poppins;
   overflow: hidden;
   background-color: transparent;
 }
@@ -68,7 +67,6 @@
 /* Styling for the input field */
 .box input {
   width: 100%;
-  font-family: Poppins;
   padding: 20px 0 5px 10px;
   border: none;
   outline: none;
@@ -95,6 +93,9 @@
     position: absolute;
     right: 0;
     bottom: 2px;
+}
+body{
+    font-family:"Rubik",sans-serif;
 }
     </style>
 

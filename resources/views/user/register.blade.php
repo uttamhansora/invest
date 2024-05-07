@@ -16,8 +16,14 @@
   <link rel="stylesheet" href="{{asset('frontend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/plugins/select2/css/select2.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+  <link href="{{asset('userpanel/assets/css/icons.min.css')}}" rel="stylesheet">
 </head>
 <style>
+  .btn.btn-light {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+}
     .btn-primary{
         background-color: #845adf;
         border: none;
@@ -98,6 +104,9 @@
         .main_box_sign_up:hover{
             color: #fff;
         }
+        body{
+    font-family:"Rubik",sans-serif;
+}
     </style>
 <body class="hold-transition register-page">
 <div class="register-box">
@@ -179,10 +188,16 @@
               <span class="fas fa-lock"></span>
             </div>
           </div> --}}
+          <button class="btn btn-light" type="button"
+                                                onclick="createpassword('password',this)" id="button-addon2"><i
+                                                    class="ri-eye-off-line align-middle"></i></button>
         </div>
         <div class="box mb-3">
-          <input type="password" id="password" name="password_confirmation" value="{{old('password_confirmation')}}" class="form-control" placeholder="Confirm Password">
-          <label for="password">Confirm Password</label>
+          <input type="password" id="passwords" name="password_confirmation" value="{{old('password_confirmation')}}" class="form-control" placeholder="Confirm Password">
+          <label for="passwords">Confirm Password</label>
+          <button class="btn btn-light" type="button"
+                                                onclick="createpassword('passwords',this)" id="button-addon2"><i
+                                                    class="ri-eye-off-line align-middle"></i></button>
           {{-- <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -229,6 +244,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('frontend/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('frontend/plugins/select2/js/select2.full.min.js')}}"></script>
+<script src="{{asset('userpanel/assets/js/show-password.js')}}"></script>
 </body>
 </html>
 <script>

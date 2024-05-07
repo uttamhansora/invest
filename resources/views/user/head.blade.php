@@ -56,6 +56,7 @@
     body {
     font-family: "Rubik", sans-serif !important;
 }
+
     </style>
 <!--
 `body` tag options:
@@ -713,34 +714,34 @@
 
                         <!-- Start::slide -->
                         <li class="slide has-sub {{\Request::segment(1)=='user-dashboard'  ? 'open active' : ''}} {{\Request::segment(1)=='user-profile'  ? 'open active' : ''}} {{\Request::segment(1)=='user-wallet-history'  ? 'open active' : ''}} {{\Request::segment(1)=='user-withdraw'  ? 'open active' : ''}} {{\Request::segment(1)=='user-deposit'  ? 'open active' : ''}} {{\Request::segment(1)=='user-subscription'  ? 'open active' : ''}}">
-                            <a href="javascript:void(0);" class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}} {{\Request::segment(1)=='user-profile'  ? 'active' : ''}} {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}} {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}} {{\Request::segment(1)=='deposit'  ? 'active' : ''}} {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">
+                            <!-- <a href="javascript:void(0);" class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}} {{\Request::segment(1)=='user-profile'  ? 'active' : ''}} {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}} {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}} {{\Request::segment(1)=='deposit'  ? 'active' : ''}} {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">
                                 <i class="bx bx-home side-menu__icon"></i>
                                 <span class="side-menu__label">Dashboards<span class="badge bg-warning-transparent ms-2">7</span></span>
                                 <i class="fe fe-chevron-right side-menu__angle"></i>
-                            </a>
+                            </a> -->
                             <ul class="slide-menu child1" style="list-style:none">
                                 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i><a style="padding-left: 10px;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-dollar-sign"></i><a style="padding-left: 10px;" href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-dollar-sign"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;" href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;" href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
                                     
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-landmark"></i><a style="padding-left: 10px;"  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}"> Wallet History</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-landmark"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}"> Wallet History</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-user"></i><a style="padding-left: 10px;" href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-user"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
                                 </li> 
                                 <li class="slide d-flex align-items-center">
-                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-right-from-bracket"></i><a style="padding-left: 10px;" href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-right-from-bracket"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
                                 </li> 
                                 
                             </ul>
