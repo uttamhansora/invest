@@ -44,7 +44,7 @@
 
     <!-- Choices Css -->
     <link rel="stylesheet" href="{{asset('userpanel/assets/libs/choices.js/public/assets/styles/choices.min.css')}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <link rel="stylesheet" href="{{asset('userpanel/assets/libs/jsvectormap/css/jsvectormap.min.css')}}">
 
@@ -552,12 +552,12 @@
                     <div class="header-element">
                         <div class="horizontal-logo">
                             <a href="index.html" class="header-logo">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/desktop-logo.png')}}" alt="logo" class="desktop-logo">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/toggle-logo.png')}}" alt="logo" class="toggle-logo">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/desktop-dark.png')}}" alt="logo" class="desktop-dark">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/toggle-dark.png')}}" alt="logo" class="toggle-dark">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/desktop-white.png')}}" alt="logo" class="desktop-white">
-                                <img src="{{asset('userpanel/assets/images/brand-logos/toggle-white.png')}}" alt="logo" class="toggle-white">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-logo">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-logo">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-dark">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-dark">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-white">
+                                <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-white">
                             </a>
                         </div>
                     </div>
@@ -682,18 +682,22 @@
         <aside class="app-sidebar sticky" id="sidebar">
 
             <!-- Start::main-sidebar-header -->
-            <div class="main-sidebar-header">
-                <a href="index.html" class="header-logo">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/desktop-logo.png')}}" alt="logo" class="desktop-logo">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/toggle-logo.png')}}" alt="logo" class="toggle-logo">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/desktop-dark.png')}}" alt="logo" class="desktop-dark">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/toggle-dark.png')}}" alt="logo" class="toggle-dark">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/desktop-white.png')}}" alt="logo" class="desktop-white">
-                    <img src="{{asset('userpanel/assets/images/brand-logos/toggle-white.png')}}" alt="logo" class="toggle-white">
+            <div class="main-sidebar-header" style="background:whitesmoke">
+                <a href="#" class="header-logo">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-logo">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-logo">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-dark">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-dark">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="desktop-white">
+                    <img src="{{asset('pollux.png')}}" alt="logo" class="toggle-white">
                 </a>
             </div>
             <!-- End::main-sidebar-header -->
-
+<style>
+    .app-sidebar .slide-menu.child1 .side-menu__item:before{
+        visibility:hidden;
+    }
+    </style>
             <!-- Start::main-sidebar -->
             <div class="main-sidebar" id="sidebar-scroll">
 
@@ -714,28 +718,29 @@
                                 <span class="side-menu__label">Dashboards<span class="badge bg-warning-transparent ms-2">7</span></span>
                                 <i class="fe fe-chevron-right side-menu__angle"></i>
                             </a>
-                            <ul class="slide-menu child1">
+                            <ul class="slide-menu child1" style="list-style:none">
                                 
-                                <li class="slide">
-                                    <a  href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i><a style="padding-left: 10px;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-dollar-sign"></i><a style="padding-left: 10px;" href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;" href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;" href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}">Wallet History</a>
+                                <li class="slide d-flex align-items-center">
+                                    
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-landmark"></i><a style="padding-left: 10px;"  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}"> Wallet History</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-user"></i><a style="padding-left: 10px;" href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
                                 </li> 
-                                <li class="slide">
-                                    <a  href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-right-from-bracket"></i><a style="padding-left: 10px;" href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
                                 </li> 
                                 
                             </ul>

@@ -1,7 +1,17 @@
 @extends('user.master')
 @section('content')
+<style>
+    @media screen and (max-width:991px) {
+            .table_w_wallet_over{
+                overflow-x: auto
+            }
+            .table_w_wallet{
+                width: 980px;
+            }
+        }
+</style>
 <div class="main-content app-content">
-  
+
     <!-- Content Header (Page header) -->
     <div class="content-header">
       @if(auth()->user()->is_active == 2)
@@ -35,8 +45,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
+                <div class="col-12 table_w_wallet_over">
+                    <div class="card table_w_wallet">
                         <div class="card-header">
                             <h3 class="card-title">Wallet History</h3>
                         </div>
@@ -52,7 +62,7 @@
                                         <th>Intrest</th>
                                         <th>Type</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -63,10 +73,10 @@
                                         <!-- <td>{{$data->date ?? '--'}}</td> -->
                                         <td>{{$data->amount}}</td>
                                         <td>{{$data->intrest ?? '--'}}</td>
-                                        
+
                                         <td>
                                         @if($data->model_name=='Withdraw')
-                                          
+
                                           <div class="text-danger font-weight-bold"><span>{{$data->model_name}}</span></div>
                                         @else
                                         <div class="text-success font-weight-bold"><span>{{$data->model_name}}</span></div>
@@ -80,14 +90,14 @@
                                             @else
                                             <div class="badge bg-danger">Rejected</div>
                                             @endif
-                                            
+
                                         </td>
-                                        
-                                       
-                                       
+
+
+
                                     </tr>
                                     @endforeach
-                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -98,7 +108,7 @@
                                         <th>Intrest</th>
                                         <th>Type</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </tfoot>
                             </table>

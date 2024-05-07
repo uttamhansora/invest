@@ -104,7 +104,15 @@
             width: calc(50% - 20px);
         }
         }
-       
+        @media screen and (max-width:768px) {
+            .table_dash_over{
+            overflow-x: auto;
+        }
+        .table_dash{
+            width: max-content
+        }
+    }
+
         /* Add more styles as needed */
     </style>
 
@@ -420,8 +428,8 @@
         <section class="content mt-3">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
+                    <div class="col-12 table_dash_over">
+                        <div class="card table_dash">
                             <div class="card-header" style="background-color: #111c43 !important">
                                 <h3 class="card-title text-white" style="margin-bottom: 0">Transaction History</h3>
                             </div>
