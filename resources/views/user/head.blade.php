@@ -711,7 +711,7 @@
                         <!-- Start::slide__category -->
                         <li class="slide__category"><span class="category-name">Main</span></li>
                         <!-- End::slide__category -->
-
+                       
                         <!-- Start::slide -->
                         <li class="slide has-sub {{\Request::segment(1)=='user-dashboard'  ? 'open active' : ''}} {{\Request::segment(1)=='user-profile'  ? 'open active' : ''}} {{\Request::segment(1)=='user-wallet-history'  ? 'open active' : ''}} {{\Request::segment(1)=='user-withdraw'  ? 'open active' : ''}} {{\Request::segment(1)=='user-deposit'  ? 'open active' : ''}} {{\Request::segment(1)=='user-subscription'  ? 'open active' : ''}}">
                             <!-- <a href="javascript:void(0);" class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}} {{\Request::segment(1)=='user-profile'  ? 'active' : ''}} {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}} {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}} {{\Request::segment(1)=='deposit'  ? 'active' : ''}} {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">
@@ -720,7 +720,20 @@
                                 <i class="fe fe-chevron-right side-menu__angle"></i>
                             </a> -->
                             <ul class="slide-menu child1" style="list-style:none">
-                                
+                            <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
+            WITHDRAW BALANCE (${{auth()->user()->withdraw_amount}})
+            @else
+            $0
+            @endif</a>
+                                </li> 
+                                <li class="slide d-flex align-items-center">
+                                <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
+            WALLET BALANCE (${{\App\Models\User::walletamount()}})
+            @else
+            $0
+            @endif</a>
+                                </li> 
                                 <li class="slide d-flex align-items-center">
                                 <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
                                 </li> 
