@@ -121,7 +121,8 @@
             <b>Sign in now!</b>
         </a>
       <div class="p-4">
-        <p style="font-size:18px" class="login-box-msg">Register a new membership</p>
+        <p style="font-size:18px" class="login-box-msg">Sign Up</p>
+        <h6 style="text-align:center">To open your account</h6>
 
       <form action="{{route('user-register-post')}}" method="POST">
         @csrf
@@ -170,7 +171,7 @@
 
         </select>
         </div>
-        <div class="box mb-4">
+        <!-- <div class="box mb-4">
         <select class="form-control select2state" name="state" value="{{old('state')}}" id="stateDropdown" required>
             <option value="">Select State</option>
         </select>
@@ -179,7 +180,7 @@
         <select class="form-control select2city" name="city" value="{{old('city')}}" id="cityDropdown" required>
             <option value="" selected>Select City</option>
         </select>
-        </div>
+        </div> -->
         <div class="box mb-3">
           <input type="password" id="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Password">
           <label for="password">Password</label>
@@ -213,14 +214,14 @@
           </div>
         </div> -->
         <div class="row">
-          <!-- <div class="col-8">
+          <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+              <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
               <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
+               I agree With Policy & <a href="#">terms</a>
               </label>
             </div>
-          </div> -->
+          </div>
           <!-- /.col -->
           <div class="col-12">
             <button type="submit" class="btn btn-lg btn-primary">Register </button>
@@ -234,6 +235,11 @@
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
+  <div style="text-align:center">
+    Contact us at support@invest.com
+    <br/>
+  if you have problems
+  </div>
 </div>
 <!-- /.register-box -->
 

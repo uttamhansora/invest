@@ -232,8 +232,6 @@ class UserController extends Controller
                 'password' => 'required|string|min:6|confirmed',
                 'last_name' => 'required|string|max:255',
                 'country' => 'required|string|max:255',
-                'state' => 'required|string|max:255',
-                'city' => 'required|string|max:255',
                 'mobile' => 'required|string|max:255|unique:users,mobile',
             ]);
         
@@ -246,8 +244,8 @@ class UserController extends Controller
                 'last_name' => $request->input('last_name'),
                 'mobile' => $request->input('mobile'),
                 'country' => $request->input('country'),
-                'state' => $request->input('state'),
-                'city' => $request->input('city'),
+                'state' => 1,
+                'city' => 1,
             ]);
             \Auth::login($user);
             return redirect()->route('user-dashboard')->with('success', 'Register SuccessFully.');

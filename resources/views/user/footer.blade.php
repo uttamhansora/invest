@@ -174,8 +174,10 @@ function firetoasttext() {
         <script>
 $(document).ready(function() {
     $('#verificationModal').modal('show');
+    
     // alert("Not Verify")
 });
+
         </script>
         @endif
         @stack('js')

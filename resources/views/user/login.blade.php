@@ -604,15 +604,7 @@ body{
                                                 onclick="createpassword('signin-password',this)" id="button-addon2"><i
                                                     class="ri-eye-off-line align-middle"></i></button>
                                           </div>
-                                        <div class="mt-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <!-- <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
-                                                Remember password ?
-                                            </label> -->
-                                            </div>
-                                        </div>
-                                    </div>
+                                     </div>
                                     <div class="col-xl-12 d-grid mt-2">
 
                                         <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
