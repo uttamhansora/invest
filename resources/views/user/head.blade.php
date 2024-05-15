@@ -540,13 +540,22 @@
                   </div>
                </div>
                <script>
-                  function toggleclick(){
-                     const openview=document.getElementById('openview');
-                     const iconview=document.getElementById('iconview');
-                     openview.classList.toggle("open");
-                     iconview.classList.toggle("open");
+                  // function toggleclick(){
+                  //    const openview=document.getElementById('openview');
+                  //    const iconview=document.getElementById('iconview');
+                  //    openview.classList.toggle("open");
+                  //    iconview.classList.toggle("open");
                      
-                  }
+                  // }
+                  function toggleclick() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 768) { // Adjust the value according to your desktop view breakpoint
+            const openview = document.getElementById('openview');
+            const iconview = document.getElementById('iconview');
+            openview.classList.toggle("open");
+            iconview.classList.toggle("open");
+        }
+    }
                   </script>
                <!-- End::header-element -->
                <!-- Start::header-element -->
