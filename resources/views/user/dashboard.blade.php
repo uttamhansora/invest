@@ -169,7 +169,18 @@
                                 <p style="color: #6e6e6e" class="fs-6">Total Balance</p>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-between py-3 px-4 mt-3"
+                         <!-- <div class="d-flex justify-content-between py-3 px-4 mt-3"
+                            style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);border-radius: 10px">
+                            <div>
+                                <p class="fs-6" style="margin-bottom: 0">BTC</p>
+                                <p style="color: #6e6e6e;margin-bottom: 0" class="fs-6">Bitcoin</p>
+                            </div>
+                            <div>
+                                <p class="fs-6" style="margin-bottom: 0">0 BTC</p>
+                                <p style="color: #6e6e6e;margin-bottom: 0" class="fs-6">0 USD</p>
+                            </div>
+                        </div> -->
+                        <!--<div class="d-flex justify-content-between py-3 px-4 mt-3"
                             style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);border-radius: 10px">
                             <div>
                                 <p class="fs-6" style="margin-bottom: 0">BTC</p>
@@ -190,18 +201,7 @@
                                 <p class="fs-6" style="margin-bottom: 0">0 BTC</p>
                                 <p style="color: #6e6e6e;margin-bottom: 0" class="fs-6">0 USD</p>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-between py-3 px-4 mt-3"
-                            style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);border-radius: 10px">
-                            <div>
-                                <p class="fs-6" style="margin-bottom: 0">BTC</p>
-                                <p style="color: #6e6e6e;margin-bottom: 0" class="fs-6">Bitcoin</p>
-                            </div>
-                            <div>
-                                <p class="fs-6" style="margin-bottom: 0">0 BTC</p>
-                                <p style="color: #6e6e6e;margin-bottom: 0" class="fs-6">0 USD</p>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

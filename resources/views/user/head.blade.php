@@ -694,40 +694,62 @@
                         </a> -->
                      <ul class="slide-menu child1" style="list-style:none">
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i>
+                           </div>
+                           <a style="padding-left: 17px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
                            WITHDRAW BALANCE (${{auth()->user()->withdraw_amount}})
                            @else
                            $0
                            @endif</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
+                           <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-wallet"></i>
+                           </div>
+                           <div>
+                           <a style="padding-left: 17px;font-family: 'Rubik', sans-serif !important;"  class="side-menu__item">@if(auth()->user()->is_active== 1 && auth()->user()->is_banned==1)
                            WALLET BALANCE (${{\App\Models\User::walletamount()}})
                            @else
                            $0
                            @endif</a>
+                           </div>
+
                         </li>
                         <li class="slide d-flex align-items-center">
-                            
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-gauge"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-dashboard')}}"  class="side-menu__item {{\Request::segment(1)=='user-dashboard'  ? 'active' : ''}}">Dashboard</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-dollar-sign"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-dollar-sign"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.subscription')}}"  class="side-menu__item {{\Request::segment(1)=='user-subscription'  ? 'active' : ''}}">Subscription</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.deposit')}}"  class="side-menu__item {{\Request::segment(1)=='deposit'  ? 'active' : ''}}">Deposit</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-money-bill-transfer"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.withdraw')}}"  class="side-menu__item {{\Request::segment(1)=='user-withdraw'  ? 'active' : ''}}">Withdraw</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-landmark"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}"> Wallet History</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-landmark"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;"  href="{{route('user.wallet-history')}}"  class="side-menu__item {{\Request::segment(1)=='user-wallet-history'  ? 'active' : ''}}"> Wallet History</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-user"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-user"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user-profile')}}"  class="side-menu__item {{\Request::segment(1)=='user-profile'  ? 'active' : ''}}">Profile</a>
                         </li>
                         <li class="slide d-flex align-items-center">
-                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-right-from-bracket"></i><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
+                        <div style="width:35px">
+                           <i style="font-size:15px;color:var(--menu-prime-color);" class="fa-solid fa-right-from-bracket"></i>
+                           </div><a style="padding-left: 10px;font-family: 'Rubik', sans-serif !important;" href="{{route('user.logout')}}"  class="side-menu__item">Logout</a>
                         </li>
                      </ul>
                   </li>
