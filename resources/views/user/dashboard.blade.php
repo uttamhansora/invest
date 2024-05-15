@@ -165,7 +165,7 @@
                     <div style="height: 340px;overflow-y:auto">
                         <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
                             <div>
-                                <h5>0.00 USD</h5>
+                                <h5>{{\App\Models\User::walletamount()}} USD</h5>
                                 <p style="color: #6e6e6e" class="fs-6">Total Balance</p>
                             </div>
                         </div>
