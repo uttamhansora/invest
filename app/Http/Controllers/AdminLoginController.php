@@ -16,6 +16,10 @@ class AdminLoginController extends Controller
             return back()->with('error', 'Error: ' . $e->getMessage());
         }
     }  
+    public function contactform(){
+        $contact=\App\Models\Contact::orderBy('id','DESC')->get();
+        return view('admin.contactform',compact('contact'));
+    }
     public function assignqr(Request $request){
         $user=\App\Models\User::where('id',$request->id)->first();
         $user->qrcode=$request->val;

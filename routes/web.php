@@ -54,7 +54,7 @@ Route::post('/submitwithdraw', [UserController::class, 'submitwithdraw'])->name(
 });
 
 
-
+Route::post('submitform',[UserController::class,'submitform'])->name('submitform');
 
 
 
@@ -70,6 +70,7 @@ Route::post('admin-register-post',[AdminLoginController::class,'register_post'])
 Route::middleware(['auth', 'checkAdminRole'])->group(function () {
 
 Route::get('dashboard',[AdminLoginController::class,'dashboard'])->name('dashboard');
+Route::get('contactform',[AdminLoginController::class,'contactform'])->name('contactform');
 Route::get('verifydoc',[AdminLoginController::class,'verifydoc'])->name('verifydoc');
 Route::post('submitverify',[AdminLoginController::class,'submitverify'])->name('submitverify');
 Route::get('users',[AdminLoginController::class,'users'])->name('users');

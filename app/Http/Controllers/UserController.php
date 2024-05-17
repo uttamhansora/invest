@@ -224,6 +224,14 @@ class UserController extends Controller
         $mergedRecords = $mergedRecords->sortByDesc('created_at');
         return view('user.wallet-history',compact('mergedRecords'));
     }
+    public function submitform(Request $request){
+        $new=new \App\Models\Contact();
+        $new->name=$request->name;
+        $new->email=$request->email;
+        $new->msg=$request->msg;
+        $new->save();
+        return redirect()->back();
+    }
     public function register_post(Request $request){
         try{
             $this->validate($request, [

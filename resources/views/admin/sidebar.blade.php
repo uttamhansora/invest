@@ -100,6 +100,15 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('contactform')}}" class="nav-link {{\Request::segment(1)=='contactform' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Contact Forms
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('qr-code')}}" class="nav-link {{\Request::segment(1)=='qr-code' || \Request::segment(1)=='add-qr-code' ? 'active' : ''}}">
               <i class="nav-icon fas fa-th"></i>
               <p>

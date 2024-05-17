@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>REUNIR</title>
+    <title>invest</title>
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <!--icofont icon css-->
@@ -33,7 +33,7 @@
         <div class="container">
 
             <div class="logo-section">
-                <a class="logo-title navbar-brand" href="#"><img src="{{asset('static/img/logo.png')}}" alt="logo">REUNIR</a>
+                <a class="logo-title navbar-brand" href="#"><img src="{{asset('pollux.png')}}" alt="logo">INVEST</a>
             </div>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-6 text-center">
                         <div class="single-statics">
                             <div class="icon-box">
                                 <i class="ren-people"></i>
@@ -148,7 +148,7 @@
                                 <h4>Active investors daily</h4>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -189,19 +189,19 @@
             <div class="col-lg-6 col-md-10 text-center">
                 <div class="calculate-right">
                     <div class="row justify-content-end">
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        <!-- <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="text-box">
                                 <span class="counter calculator-result-daily">212</span>
                                 <h4>Daily Profit</h4>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        </div> -->
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="text-box">
                                 <span class="counter calculator-result-weekly">1484</span>
                                 <h4>Weekly Profit</h4>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="text-box">
                                 <span class="counter calculator-result-monthly">6360</span>
                                 <h4>Monthly Profit</h4>
@@ -225,7 +225,7 @@
                         <h5 class="about-title">WELCOME TO REUNIR</h5>
                         <h2 class="about-subtitle">A few words About Us</h2>
                         <h5 class="about-details">To meet <span>today's challenges</span>, we've created a unique fund management system</h5>
-                        <p class="about-description">Reunir - a private financial company specializing in sports betting. Our system is risk-free thanks to the development and improvement of semi-automatic system of rates. We upgraded our automatic system so that the last step before the rate is now done by our operators.</p>
+                        <p class="about-description">Pollux - a private financial company specializing in commodity investment. Our system is risk-free thanks to the development and improvement of semi-automatic system of rates. We upgraded our automatic system so that the last step before the rate is now done by our operators.</p>
                     </div>
 
                     <div class="about-box">
@@ -1622,7 +1622,7 @@
         <img class="left-shape3" src="{{asset('static/img/transaction-bg-shape-01.png')}}" alt="#">
         <img class="left-shape4" src="{{asset('static/img/transaction-bg-shape-01.png')}}" alt="#">
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
                 <div class="transaction-text text-center">
@@ -1914,12 +1914,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 <!-- transaction section end -->
 
 <!-- download section begin -->
-<section class="download-section">
+<!-- <section class="download-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7">
@@ -1972,7 +1972,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- download section end -->
 
 <!-- testimonial section begin -->
@@ -2400,11 +2400,12 @@
             </div>
             <div class="col-lg-5">
                 <div class="contact-form">
-                    <form id="contactForm" method="post" class="contact-form-aqua">
+                    <form id="contactForm" method="post" class="contact-form-aqua" action="{{route('submitform')}}">
+                        @csrf
                         <h2 class="contact-head">Send Us a Massage</h2>
                         <input type="text" name="name" required="" placeholder="Name *" class="contact-frm active">
                         <input type="email" name="email" required="" placeholder="Email *" class="contact-frm">
-                        <textarea name="message" id="message" placeholder="Message *" class="contact-msg"></textarea>
+                        <textarea name="msg" id="message" placeholder="Message *" class="contact-msg"></textarea>
                         <input id="form-submit" type="submit" value="SUBMIT NOW" class="contact-btn">
                         <br>
                         <br>
