@@ -62,6 +62,9 @@ Route::post('submitform',[UserController::class,'submitform'])->name('submitform
 
 // Admin Route Start
 Route::get('admin-login',[AdminLoginController::class,'login'])->name('admin-login');
+
+Route::get('termsandconditions',[AdminLoginController::class,'termsandconditions'])->name('termsandconditions');
+Route::get('privacypolicy',[AdminLoginController::class,'privacypolicy'])->name('privacypolicy');
 Route::post('admin-login-post',[AdminLoginController::class,'login_post'])->name('admin-login-post');
 
 Route::get('admin-register',[AdminLoginController::class,'register'])->name('admin-register');

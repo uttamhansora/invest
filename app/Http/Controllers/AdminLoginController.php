@@ -5,8 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Qrcode;
 
+
 class AdminLoginController extends Controller
 {
+    public function termsandconditions(){
+        return view('terms');
+    }
+    public function privacypolicy(){
+        return view('privacy');
+    }
     // Test Code Psuh New Code 11
     public function login(){
         try {
