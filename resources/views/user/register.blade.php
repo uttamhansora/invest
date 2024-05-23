@@ -218,7 +218,7 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
               <label for="agreeTerms">
-               I agree With Policy & <a href="#">terms</a>
+               I agree With <a href="{{route('privacypolicy')}}">Policy</a> & <a href="{{route('termsandconditions')}}">terms</a>
               </label>
             </div>
           </div>
